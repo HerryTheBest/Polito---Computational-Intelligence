@@ -32,6 +32,6 @@ if __name__ == '__main__':
     player4 = SimpleBot()
 
     #playing
-    n_games = 1_000
+    n_games = 100
     print(f'Playing {n_games} games')
-    play(player4, player2, n_games)
+    play(player3, player4, n_games)
