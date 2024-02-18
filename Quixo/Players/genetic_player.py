@@ -41,7 +41,7 @@ class Gbot(Player):
         return population
     
 
-    def fitness(self, population : list(), game : Game):
+    def fitness(self, population : list, game : Game):
         fitted_population = list()
         player = game.get_current_player()
         for individual in population:

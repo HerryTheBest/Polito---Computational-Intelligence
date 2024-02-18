@@ -15,7 +15,7 @@ class SimpleBot(Player):
         return from_pos, move
     
 
-    def move_fitness(self, population : list(), game : Game):
+    def move_fitness(self, population : list, game : Game):
         fitted_population = list()
         player = game.get_current_player()
         adversary = 1 - player
@@ -31,12 +31,9 @@ class SimpleBot(Player):
             for line in lines:
                 fitness_score += numpy.sum(line == player)**2
 
-
             #fitness2: prefer to remove opponent pieces, not own pieces
             if game.get_board()[individual[0][1]][individual[0][0]] == game.get_current_player():
                 fitness_score -= 1
-            elif game.get_board()[individual[0][1]][individual[0][0]] == (1 - game.get_current_player()):
-                fitness_score += 1
 
             #fitness3: don't make a move that makes the adversary win
             losing_move = False
